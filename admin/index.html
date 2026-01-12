@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tiny Heroes Admin</title>
+  <title>Tiny Heroes | Admin</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <div id="nc-root"></div>
+
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
   <script>
     CMS.init({
       config: {
-        backend: { name: 'git-gateway', branch: 'main' },
-        load_config_file: false,
+        // Tells the CMS to use the settings below instead of looking for a config.yml file
+        load_config_file: false, 
+        backend: {
+          name: 'git-gateway',
+          branch: 'main'
+        },
+        display_url: "https://tinyheroesshop.com",
         media_folder: "images",
         public_folder: "/images",
         collections: [
